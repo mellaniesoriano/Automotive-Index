@@ -14,9 +14,9 @@ SELECT DISTINCT make_title FROM car_models WHERE make_code LIKE '%LAM%';
 -- 1st Time : 29.501 ms
 -- 2nd Time : 25.949 ms
 
-SELECT DISTINCT model_title FROM car_models WHERE model_code LIKE '%GT-R%';
--- 1st Time : 33.513 ms
--- 2nd Time : 32.511 ms
+SELECT DISTINCT model_title FROM car_models WHERE make_code LIKE '%NISSAN%' AND model_code LIKE '%GT-R%';
+-- 1st Time : 32.251 ms
+-- 2nd Time : 30.444 ms
 
 SELECT make_code, model_code, model_title, year FROM car_models WHERE make_code LIKE '%LAM%';
 -- 1st Time : 30.273 ms
