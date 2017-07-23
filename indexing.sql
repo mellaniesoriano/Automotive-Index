@@ -26,7 +26,7 @@ SELECT * FROM car_models WHERE year = 2010;
 -- Time : 35.467 ms
 
 
--- WITH INDEX
+-- WITH INDEX --
 
 CREATE INDEX title_index ON car_models(make_title) WHERE make_code LIKE '%LAM%';
 SELECT DISTINCT make_title FROM car_models WHERE make_code LIKE '%LAM%';
@@ -37,9 +37,9 @@ SELECT DISTINCT model_title FROM car_models WHERE make_code LIKE '%NISSAN%' AND 
 -- Time: 2.307 ms
 
 CREATE INDEX all_lam_index ON car_models(make_title) WHERE make_code LIKE '%LAM%';
--- Time: 2.459 ms
 SELECT make_code, model_code, model_title, year FROM car_models WHERE make_code LIKE '%LAM%';
+-- Time: 2.459 ms
 
 CREATE INDEX year_is_2010 ON car_models(make_title) WHERE year = 2010;
--- Time: 13.644 ms
 SELECT * FROM car_models WHERE year = 2010;
+-- Time: 13.644 ms
