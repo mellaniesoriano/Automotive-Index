@@ -10,23 +10,24 @@ CREATE DATABASE indexed_cars WITH OWNER indexed_cars_user;
 
 \i scripts/car_model_data.sql
 
+CREATE INDEX title_index ON car_models(make_title) WHERE make_code LIKE '%LAM%';
+-- Time: 0.223 ms
 SELECT DISTINCT make_title FROM car_models WHERE make_code LIKE '%LAM%';
--- 1st Time : 29.501 ms
--- 2nd Time : 25.949 ms
+-- Time : 29.501 ms
 
+CREATE INDEX title_index ON car_models(make_title) WHERE make_code LIKE '%NISSAN%' AND model_code LIKE '%GT-R%';
+-- Time : 0.473 ms
 SELECT DISTINCT model_title FROM car_models WHERE make_code LIKE '%NISSAN%' AND model_code LIKE '%GT-R%';
--- 1st Time : 32.251 ms
--- 2nd Time : 30.444 ms
+-- Time : 32.251 ms
+
 
 SELECT make_code, model_code, model_title, year FROM car_models WHERE make_code LIKE '%LAM%';
--- 1st Time : 30.273 ms
--- 2nd Time : 26.248 ms
+-- Time : 30.273 ms
 
 SELECT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
--- 1st Time : 83.180 ms
--- 2nd Time : 71.748 ms
+-- Time : 83.180 ms
 
 SELECT * FROM car_models WHERE year = 2010;
--- 1st Time : 35.467 ms
--- 2nd Time : 29.852 ms
+-- Time : 35.467 ms
+
 
