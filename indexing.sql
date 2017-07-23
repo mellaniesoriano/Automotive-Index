@@ -11,11 +11,17 @@ CREATE DATABASE indexed_cars WITH OWNER indexed_cars_user;
 -- SELECT COUNT(id) [ COLUMN NAME ] to check count
 
 SELECT DISTINCT make_title FROM car_models WHERE make_code LIKE '%LAM%';
+-- Time: 29.501 ms
 
 SELECT DISTINCT model_title FROM car_models WHERE model_code LIKE '%GT-R%';
+-- Time: 33.513 ms
 
 SELECT make_code, model_code, model_title, year FROM car_models WHERE make_code LIKE '%LAM%';
 -- Time: 30.273 ms
 
 SELECT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
 -- Time: 83.180 ms
+
+SELECT * FROM car_models WHERE year = 2010;
+-- Time: 35.467 ms
+
