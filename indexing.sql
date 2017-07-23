@@ -40,6 +40,10 @@ CREATE INDEX all_lam_index ON car_models(make_title) WHERE make_code LIKE '%LAM%
 SELECT make_code, model_code, model_title, year FROM car_models WHERE make_code LIKE '%LAM%';
 -- Time: 2.459 ms
 
+CREATE INDEX years_between_2010_and_2015_index ON car_models(make_title) WHERE year BETWEEN 2010 AND 2015;
+SELECT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
+-- Time: 9.024 ms
+
 CREATE INDEX year_is_2010 ON car_models(make_title) WHERE year = 2010;
 SELECT * FROM car_models WHERE year = 2010;
 -- Time: 13.644 ms
