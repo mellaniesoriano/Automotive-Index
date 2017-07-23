@@ -1,3 +1,5 @@
+CREATE INDEX title_index ON car_models(make_title);
+
 CREATE USER indexed_cars_user;
 
 CREATE DATABASE indexed_cars WITH OWNER indexed_cars_user;
@@ -24,4 +26,3 @@ SELECT * FROM car_models WHERE year BETWEEN 2010 AND 2015;
 
 SELECT * FROM car_models WHERE year = 2010;
 -- Time: 35.467 ms
-
